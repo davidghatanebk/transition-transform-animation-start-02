@@ -35,3 +35,112 @@
 	background-color: #e89380;
 	/*orange*/
 }
+/*-------Transition-------*/
+.transition .b1 {
+	transition: all 1s ease-out;
+}
+.transition .b1:hover {
+	width: 500px;
+	height: 400px;
+}
+.transition .b2 {
+	transition: width 1s, height 2s;
+	transition-timing-function: ease-out;
+	transition-delay: 2s;
+}
+.transition .b2:hover {
+	width: 500px;
+	height: 400px;
+}
+.transition .b3 {
+	transition: transform 1s 0.5s(01,1.1,.45,.95);
+}
+.transition .b3:hover {
+	transform:rotate 180deg ;
+}
+.transition .b4 {
+	transition: all 1s ease-in;
+}
+.transition .b4:hover {
+	background-color: #de5d83;
+	border-radius: 30px;
+}
+/*----------transform-------*/
+.transform .b1:hover {
+transform:translate(20px, 30px) ;
+transition: all 1s ease-out;
+}
+.transform .b2:hover {
+	transform:scale(1.2);
+	transition: all 2s ease-out ;
+	overflow: hidden;
+}
+.transform .b3:hover {
+	transform: rotate(45deg);
+	transition: all 1s ease-out;
+}
+.transform .b3:hover {
+	transform-origin: top right;
+}
+.transform .b4 {
+	transform: skewX(4deg) skewY(25deg);
+	transition: all 1s ease-out;
+}
+.transform .b4:hover {
+	transform: skewX(0) skewY(0);
+	transition: all 1s ease-out;
+}
+/*------animation------*/
+@keyframes changeColor {
+	from {
+background-color: #9696ff;
+	}
+	to {
+background-color: aqua;
+	}
+}
+.animation .b1 {
+	animation-name: changeColor;
+	animation-duration: 2s;
+	animation-delay: 2s;
+	/*animation-iteration-count: infinite;*/
+	animation-fill-mode: backwards;
+}
+@keyframes moveAround {
+	0% {
+transform: translate(0,0);
+	}
+	25% {
+		transform: translate(220px,0);
+	}
+	50% {
+		transform: translate(220px,220px);
+	}
+	75% {
+		transform: translate(0,220px);
+	}
+	100% {
+		transform: translate(0,0);
+	}
+}
+.animation .b2 {
+	animation-name: moveAround;
+	animation-duration: 3s;
+	animation-iteration-count: 3;
+}
+@keyframes transformMe {
+	0% {
+transform:scale(.5) rotateX(0) translateX(0);
+	}
+	100% {
+		transform:scale(.1) rotateX(180deg) translateX(600px);
+	}
+}
+.animation .b3 {
+	animation: moveAround 2s 12 alternate forwards ease-in-out;
+	
+
+}
+.animation .b4 {
+	animation:1.5 3s infinite ;
+}
